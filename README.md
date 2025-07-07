@@ -16,7 +16,7 @@
 + [Classic Outlook](https://support.microsoft.com/en-us/office/install-or-reinstall-classic-outlook-on-a-windows-pc-5c94902b-31a5-4274-abb0-b07f4661edf5)
 
 ## Overview
-This repository contains some sample files, but all you really need is `mailmerge.py`. This script depends on `pip install pywin32`
+This repository contains some sample files, but all you really need is `mailmerge.py` and the above dependencies.
 
 This is an improved mail merge utility for Outlook. Note that the recent web-app version won't work.
 You'll need the classic version from https://support.microsoft.com/en-us/office/install-or-reinstall-classic-outlook-on-a-windows-pc-5c94902b-31a5-4274-abb0-b07f4661edf5.
