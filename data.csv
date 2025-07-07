@@ -1,0 +1,4 @@
+Address, Name, Company Name, Attachments, CC
+bob@example.com , Bob Smith, Example Co., ./example.txt, jack@example.com; jill@example.com
+jane@example.com, Jane Doe, Jane Doe Inc., ./doe.txt
+kevin@example.com, Kevin, Acme, ./acme.txt; extra.txt

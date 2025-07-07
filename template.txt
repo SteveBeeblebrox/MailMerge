@@ -1,0 +1,6 @@
+Dear [[Name]],
+
+Say hi to your friends at [[Company]] for me!
+
+Thanks,
+Trin (https://example.com)
