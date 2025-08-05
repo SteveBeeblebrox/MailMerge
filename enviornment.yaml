@@ -1,0 +1,6 @@
+name: sendmail
+dependencies:
+  - pywin32
+  - click
+  - markdown
+  - pyyaml
