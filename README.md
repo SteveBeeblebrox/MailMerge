@@ -1,4 +1,4 @@
-# Trin\'s Super Mail Merge Script
+# Trin\'s Super Mail Script
 ## Unlicense
 > This is free and unencumbered software released into the public domain.
 > 
@@ -12,35 +12,25 @@
 
 ## Dependencies
 + Python 3
-+ `pywin32` (Run `pip install pywin32` in PowerShell after installing Python)
++ `pywin32`, `pyyaml` (Run `pip install pywin32 pyyaml` in PowerShell after installing Python)
 + [Classic Outlook](https://support.microsoft.com/en-us/office/install-or-reinstall-classic-outlook-on-a-windows-pc-5c94902b-31a5-4274-abb0-b07f4661edf5)
 
-## Overview
-This repository contains some sample files, but all you really need is `mailmerge.py` and the above dependencies.
+## Optional Dependencies
++ `click`, `markdown` (Run `pip install click markdown` in PowerShell after installing Python)
 
-This is an improved mail merge utility for Outlook. Note that the recent web-app version won't work.
+## Overview
+This repository contains some sample files, but all you really need is `sendmail.py` and the above dependencies.
+
+This is a python utility for sending mail via Outlook. Note that the recent web-app version won't work.
 You'll need the classic version from https://support.microsoft.com/en-us/office/install-or-reinstall-classic-outlook-on-a-windows-pc-5c94902b-31a5-4274-abb0-b07f4661edf5.
 
-To start, make a `.txt` or basic `.html` file that you want to be the contents of the messages. Replace dynamic values with `[[KEY]]` where `KEY` is some identifier you pick like `Last Name` or `Company`.
-These keys are case insensitive and should consist of only alphanumeric characters plus underscores and spaces.
-
-Next, make a `*.csv` file (you can export an Excel sheet as this) where each of your keys is a column (without any square brackets or quotes) and each row represents a new message.
-                        
-The `[[KEY]]` in the template will be replaced by the row and `KEY` pair in the table. Additionally, keys are substituted in the subject line field.
-
-The keys `ADDRESS`, `CC`, `BCC`, and `ATTACHMENTS` are special. They indicate the target recipients and any files to attach. Each accept a list of entries separated by `;` and addresses can use contact shorthands. `ADDRESS` is always required.
-
-Nothing is sent until you confirm. In most cases, user errors are caught before anything is sent; however, Outlook errors or network issues may interrupt partway through sending the list of messages.
+Run with `--help` for more information.
 
 ## Examples (From inside PowerShell)
 ```ps
-python --help
+python sendmail.py --help
 ```
 
 ```ps
-python mailmerge.py .\template.txt .\data.csv -F you@outlook.com -A './Attachments' -S 'Hi [[Name]]!'
-```
-
-```ps
-python mailmerge.py .\template.html .\data.csv -F you@outlook.com -A './Attachments' -S 'Hi [[Name]]!'
+python sendmail.py .\draft.md -M .\data.csv -D ./Attachments
 ```
