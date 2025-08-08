@@ -26,6 +26,19 @@ You'll need the classic version from https://support.microsoft.com/en-us/office/
 
 Run with `--help` for more information.
 
+## Embedding Images
+To easily embed images, use data URLs.
+
+```python
+def img(path: str) -> str:
+    from base64 import b64encode
+    from mimetypes import guess_type
+    with open(path, 'rb') as f:
+        return f'''data:{guess_type(path)[0][:]};base64,{b64encode(f.read()).decode('utf-8')}'''
+
+print(img('sword_of_protection.png'))
+```
+
 ## Examples (From inside PowerShell)
 ```ps
 python sendmail.py --help
